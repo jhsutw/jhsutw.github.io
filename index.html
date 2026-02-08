@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>josephH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/me-big.png" type="image/png" sizes="32x32">
+  <link rel="shortcut icon" href="img/me-big.png" type="image/png">
+  <link rel="stylesheet" href="css/main.bundle.css">
+  <style>
+    /* Scope smaller project titles to the Projects section only */
+    #projects .tile .title {
+      /* smaller than Bulma default title; use !important to override bundled styles */
+      font-size: 1.5rem !important;
+      line-height: 1.2 !important;
+      margin-bottom: 0.5rem !important;
+    }
+    /* If you prefer slightly larger on very small screens, adjust with media query */
+    @media (max-width: 480px) {
+      #projects .tile .title { font-size: 1rem !important; }
+    }
+    /* Project cover sizing: enforce uniform thumbnail height and proportional scaling
+       so the photos are never cropped but fill a consistent visual area. */
+    #projects .tile .image {
+      /* set a fixed visual area for the cover */
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #f5f5f5; /* neutral background for consistent letterboxing */
+    }
+    #projects .tile .image img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+    @media (max-width: 1024px) {
+      #projects .tile .image { height: 200px; }
+    }
+    @media (max-width: 480px) {
+      #projects .tile .image { height: 160px; }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
+</head>
+
+<body>
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+      
+      <div class="navbar-item is-hidden-desktop">
+        <a href="https://github.com/jhsutw" class="icon is-large has-text-light">
+          <i class="fab fa-2x fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <a href="https://github.com/jhsutw" class="icon is-large has-text-light">
+            <i class="fab fa-2x fa-github"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-primary">
+    <div class="hero-body">
+      <div class="container">
+        <div class="level">
+          <div class="level-item has-text-centered">
+            <figure class="image is-128x128">
+              <img class="is-rounded" src="img/me-big.png">
+            </figure>
+          </div>
+        </div>
+        <div class="columns has-text-centered">
+          <div class="column">
+            <h1 class="title is-1">
+              Joseph Hsu
+            </h1>
+            <h2 class="subtitle">
+              Software Engineer | Full-Stack, Cloud & Systems | Upenn Computer Science '27
+            </h2>
+            <p>
+              <a href="docs/resume.pdf" class="icon has-text-light">
+                <i class="fas fa-file-word"></i> <strong>Resume</strong>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">About Me</h1>
+      <hr />
+      <p>Software Engineer pursuing an M.S. in Computer Science at the University of Pennsylvania. 
+        Experienced in building scalable full-stack and backend systems using Java, Python, React, and cloud technologies. 
+        Passionate about system design, performance, and building products with real-world impact.</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Experience</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/Tesla_logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Tesla</p>
+              <p class="subtitle is-6">Sales Analyst - <time datetime="2024-9">September 2024</time> - <time
+                  datetime="2025-3">March 2025</time> </p>
+            </div>
+          </div>
+          <div class="content">
+            <p>Worked at the intersection of sales and software systems, building internal tools and data-driven workflows to support sales performance and decision-making.</p>
+            <ul>
+              <li>Rebuilt an internal sales tracking interface with a modern SPA and RESTful services, increasing regional sales by 4.6%</li>
+              <li>Conducted weekly performance reviews using SQL and Tableau, providing sales and delivery teams with comprehensive insights to drive actions</li>
+              <li>Redesigned sales process and segmented KPIs into actionable metrics, guiding frontline actions that lifted sales by 7.6%</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">RESTful APIs</span>
+              <span class="tag">Data Analysis</span>
+              <span class="tag">React.js</span>
+              <span class="tag">HTML/CSS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/shopee logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Shopee, Sea Group</p>
+              <p class="subtitle is-6">Data Engineering Intern - <time datetime="2023-10">October 2023</time> - <time
+                  datetime="2024-4">April 2024</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <p>Worked on large-scale data and infrastructure systems supporting warehouse operations, focusing on automation, scalability, and cost optimization.</p>
+            <ul>
+              <li>Built an asynchronous task scheduler with Celery and RabbitMQ, reducing warehouse manual scheduling workload by over 90%</li>
+              <li>Modernized ETL pipelines by implementing automated CI/CD workflows with GitLab CI, Docker, and Helm, cutting infrastructure cost by 50%</li>
+              <li>Migrated batch jobs to Airflow and Spark on Kubernetes, lowering compute cost by 75% and improving scalability</li>
+              <li>Unified multi-system data with Python and SQL to compute warehouse KPIs, collaborating with the HR department to set threshold targets that
+improved workforce planning</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Celery</span>
+              <span class="tag">Rabbitmq</span>
+              <span class="tag">Airflow</span>
+              <span class="tag">Spark</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="img/microsoft logo.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Microsoft</p>
+              <p class="subtitle is-6">Data Engineering Intern - <time datetime="2022-6">June 2022</time> - <time
+                  datetime="2023-6">June 2023</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <p>Worked on large-scale data and infrastructure systems supporting warehouse operations, focusing on automation, scalability, and cost optimization.</p>
+            <ul>
+              <li>Shipped Flask microservices that unified budgeting and CRM, reducing manual reconciliation by 83% and providing near real-time visibility</li>
+              <li>Automated performance reporting with Power BI and Azure REST APIs, increasing quota attainment by 14%</li>
+              <li> Built Python web scrapers and Power BI dashboards to identify high-potential companies, driving targeted outreach converting 20+ customers</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+              <span class="tag">RESTful APIs</span>
+              <span class="tag">Azure</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Data Pipelines</span>
+              <span class="tag">Microservices</span>
+              <span class="tag">Project Management</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" id="projects">
+      <h1 class="title">Projects</h1>
+      <hr />
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-12">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">StaySafe NYC<br>(Full-Stack)</p>
+                <figure class="image is-3by2">
+                  <img class="modal-trigger" data-target="project-1-modal" src="img/project1_cover.png">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Swiftify<br>(Full-Stack)</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-2-modal" src="img/project2_cover.png">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">AWS Architecture<br>(infrastructure)</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-3-modal" src="img/project3_cover.png">
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tile is-ancestor">
+        <div class="tile is-vertical is-12">
+          <div class="tile">
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Knowledge Graph<br>(NLP/ML)</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-4-modal" src="img/project4_cover.png">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Citibike System<br>(ML/DS)</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-5-modal" src="img/project5_cover.png">
+                </figure>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child notification">
+                <p class="title">Tourist Assistant<br>(Full-Stack)</p>
+                <figure class="image is-4by3">
+                  <img class="modal-trigger" data-target="project-6-modal" src="img/project6_cover.png">
+                </figure>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Education</h1>
+      <hr />
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">University of Pennsylvania</p>
+            <p class="subtitle is-6">MSc, Computer and Information Technology (Computer Science) - <time datetime="2025-8">August 2025</time> - <time
+                datetime="2027-5">May 2027</time></p>
+          </div>
+          <div class="content">
+            Focused on software engineering and computer systems, with hands-on experience in backend development, databases, and cloud-based architectures
+
+            <ul>
+              <li>Coursework: Software Development (Java), Computer Systems (C), Database & Information Systems (SQL, NoSQL), Data Structures and Software
+Design (Java), Algorithms & Computation, Machine Learning (Python)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
+        <div class="card-content">
+          <div class="content">
+            <p class="title is-4">National Taiwan University</p>
+            <p class="subtitle is-6">B.B.A., International Business; Minor in Business Analytics - <time datetime="2020-9">September 2020</time> - <time
+                datetime="2024-6">June 2024</time></p>
+          </div>
+          <div class="content">
+            Focused on data-driven decision making, business strategy, and applying analytics to solve real-world operational and market problems
+            <ul>
+              <li>Served as a Software Engineer at the LLM Lab and co-authored a published book focused on knowledge graph construction and applications</li>
+              <li>Led a 25-member secretariat of Asia’s largest student forum, coordinating a 300-participant conference with attendees from 23 countries</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Contact</h1>
+      <hr />
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://github.com/jhsutw" class="icon is-large has-text-success" target="_blank" rel="noopener">
+              <i class="fab fa-2x fa-github" style="font-size:40px;line-height:40px;"></i>
+            </a>
+            <p class="heading"><a href="https://github.com/jhsutw">github.com/jhsutw</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="mailto:joseph910302@gmail.com" class="icon is-large has-text-success">
+              <i class="fas fa-2x fa-envelope"></i>
+            </a>
+            <p class="heading"><a href="mailto:joseph910302@gmail.com">joseph910302@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <a href="https://www.linkedin.com/in/jhtw/" class="icon is-large has-text-success" target="_blank" rel="noopener">
+              <i class="fab fa-2x fa-linkedin-in"></i>
+            </a>
+            <p class="heading"><a href="https://www.linkedin.com/in/jhtw/">linkedin.com/in/jhtw</a></p>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div id="project-1-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">StaySafe NYC</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+
+        <div id="project-1-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project_pic1.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project_pic2.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project_pic3.png">
+          </figure>
+        </div>
+
+        <div class="content">
+
+          <p>A full-stack web application that integrates NYC Airbnb listings with NYPD crime incident data to help travelers and real-estate investors evaluate neighborhood safety and investment potential.
+The platform features interactive Google Maps visualizations, crime heatmaps, listing-level safety scores, and neighborhood investment rankings powered by optimized SQL analytics and geospatial queries.
+
+<br><strong>Key features include</strong> real-time map exploration, listing safety scoring based on nearby crimes, neighborhood comparison dashboards, and investment opportunity rankings using weighted heuristics.</p>
+
+          <p><strong><a href="https://drive.google.com/file/d/1DoGXbglOdAfiCifBwqZEsChPavOG5Q6o/view?usp=sharing" target="_blank" rel="noopener">Click Here for Demo Video</a></strong></p>
+          <p><strong><a href="https://github.com/jhsutw/Database-and-Computer-System-Project" target="_blank" rel="noopener">Click Here for GitHub Repository</a></strong></p>
+
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Google Maps api</span>
+            <span class="tag">Firebase Auth</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Python</span>
+          </div>
+
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-2-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Swiftify</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+
+        <div id="project-2-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/swiftify1.png">
+          </figure>
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/swiftify2.png">
+          </figure>
+        </div>
+
+        <div class="content">
+
+          <p>A full-stack web application that replicates core Spotify features, allowing users to browse music, play tracks, manage playlists, and explore artists through a modern, responsive interface.
+The application focuses on end-to-end functionality, combining a React-based frontend with a Node.js backend to deliver real-time audio playback, dynamic UI updates, and scalable data handling.
+
+<br><strong>The project emphasizes</strong> clean frontend architecture, RESTful API design, and seamless client–server interaction, closely mirroring real-world music streaming platforms.</p>
+          <p><strong><a href="https://github.com/jhsutw/Full-Stack-Spotify-Clone" target="_blank" rel="noopener">Click Here for GitHub Repository</a></strong></p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Typescript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">RESTful api</span>
+            <span class="tag">Frontend Architecture</span>
+            <span class="tag">Audio Playback</span>
+          </div>
+
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-3-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">AWS Architecture</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-3-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project3_cover.png">
+          </figure>
+        </div>
+
+        <div class="content">
+          <p>A hands-on infrastructure project that implements a client–server MySQL architecture using two AWS EC2 instances.
+One instance acts as the database server, while the other serves as a remote client, validating secure end-to-end database connectivity over a cloud network.
+
+The project focuses on cloud networking fundamentals, Linux-based server configuration, and secure database access.
+<br><strong>The project emphasizes</strong> practical experience with AWS EC2, MySQL server setup, and network security controls through Security Groups, closely reflecting real-world cloud infrastructure deployments.</p>
+          <div class="tags">
+            <span class="tag">AWS EC2</span>
+            <span class="tag">Linux</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Client–server Architecture</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Security Groups</span>
+            <span class="tag">Remote Database Access</span>
+            <span class="tag">Cloud Infrastructure</span>
+            <span class="tag">System Configuration</span>
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-4-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Knowledge Graph</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-4-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project4_cover.png">
+          </figure>
+        </div>
+
+        <div class="content">
+          <p>An AI-driven document analysis system that extracts structured knowledge from unstructured text and represents it as a knowledge graph.
+The system processes documents through natural language processing pipelines to identify entities, relationships, and key concepts, enabling efficient querying and semantic exploration of complex text data.
+
+<br><strong>The project emphasizes</strong> end-to-end NLP workflows, including text preprocessing, information extraction, and graph construction. By integrating knowledge graph modeling with traditional NLP techniques, the system supports deeper document understanding beyond keyword-based analysis.</p>
+          <p><strong><a href="https://github.com/jhsutw/Knowledge-Graph-Based-Document-Analysis-System" target="_blank" rel="noopener">Click Here for GitHub Repository</a></strong></p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Knowledge Graphs</span>
+            <span class="tag">Information Extraction</span>
+            <span class="tag">spaCy</span>
+            <span class="tag">NetworkX</span>
+            <span class="tag">Neo4j</span>
+            <span class="tag">Data Processing</span>
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-5-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Citibike System</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-5-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project5_cover.png">
+          </figure>
+        </div>
+
+        <div class="content">
+          <p>A data-driven analytics and optimization project focused on forecasting Citi Bike demand and improving operational scheduling decisions in New York City.
+The system analyzes historical bike usage patterns to predict station-level demand and supports more efficient bike rebalancing and resource allocation across the network.
+
+<br><strong>The project emphasizes</strong> time-series analysis, predictive modeling, and optimization techniques to address real-world urban mobility challenges. By combining demand forecasting with operational scheduling strategies, the system demonstrates how data science can improve service availability and operational efficiency in large-scale shared transportation systems.</p>
+          <p><strong><a href="https://github.com/jhsutw/Citi-Bike-Demand-Forecasting-Dynamic-Operational-Scheduling-Optimization" target="_blank" rel="noopener">Click Here for GitHub Repository</a></strong></p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Time Series Analysis</span>
+            <span class="tag">Demand Forecasting</span>
+            <span class="tag">Optimization</span>
+            <span class="tag">Predictive Analytics</span>
+            <span class="tag">Operations Research</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Simulation</span>
+
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <div id="project-6-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Tourist Assistant</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="project-6-modal-carousel" class="carousel">
+          <figure class="image is-4by3 carousel-cell">
+            <img src="img/project6_cover.png">
+          </figure>
+        </div>
+
+        <div class="content">
+          <p>An AI-driven travel planning system designed to help users create personalized itineraries for exploring New York City.
+The application analyzes user preferences, locations, and constraints to recommend optimal travel routes and points of interest, enabling efficient and customized trip planning.
+
+<br><strong>The project emphasizes</strong> algorithmic route optimization, data-driven recommendations, and user-centric system design. By integrating geographic data, pathfinding algorithms, and external APIs, the system demonstrates how intelligent planning tools can enhance real-world travel experiences.</p>
+          <p><strong><a href="https://github.com/jhsutw/New-York-Itinerary-Planning-System" target="_blank" rel="noopener">Click Here for GitHub Repository</a></strong></p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">AI-Powered Recommendations</span>
+            <span class="tag">Route Planning</span>
+            <span class="tag">Graph Algorithms</span>
+            <span class="tag">Flask</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">Geospatial Data</span>
+            <span class="tag">System Design</span>
+          </div>
+        </div>
+
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+
+  <script src="js/bundle.js"></script>
+</body>
+
+</html>
