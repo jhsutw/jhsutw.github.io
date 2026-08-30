@@ -57,6 +57,26 @@
       height: auto;
       object-fit: contain;
     }
+    .featured-project-card {
+      height: 100%;
+      border-top: 4px solid #00d1b2;
+    }
+    .featured-project-card .card-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .featured-project-card .project-meta {
+      color: #6b7280;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.75rem;
+    }
+    .featured-project-card .project-link {
+      margin-top: auto;
+      padding-top: 0.75rem;
+    }
   </style>
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
 </head>
@@ -115,7 +135,7 @@
     <div class="container">
       <h1 class="title">About Me</h1>
       <hr />
-      <p>AI and Software Engineer pursuing an MAS-CS at the University of Pennsylvania.
+      <p>AI and Software Engineer pursuing a Master of Applied Science in Computer Science at the University of Pennsylvania.
         I build agentic AI systems, LLM-powered applications, and scalable full-stack and backend infrastructure using Python, Java, JavaScript, and cloud technologies.
         My work spans AI agents, RAG, MCP integrations, observability, distributed systems, and reliable products with measurable real-world impact.</p>
     </div>
@@ -200,7 +220,7 @@
             </div>
             <div class="media-content">
               <p class="title is-4">Shopee, Sea Group</p>
-              <p class="subtitle is-6">Data Engineering Intern - <time datetime="2023-10">October 2023</time> - <time
+              <p class="subtitle is-6">Software Engineer Intern - <time datetime="2023-10">October 2023</time> - <time
                   datetime="2024-4">April 2024</time></p>
             </div>
           </div>
@@ -242,7 +262,7 @@ improved workforce planning</li>
             </div>
           </div>
           <div class="content">
-            <p>Worked on large-scale data and infrastructure systems supporting warehouse operations, focusing on automation, scalability, and cost optimization.</p>
+            <p>Built data services and reporting systems that connected business-critical platforms, automated reconciliation, and improved decision-making.</p>
             <ul>
               <li>Shipped Flask microservices that unified budgeting and CRM, reducing manual reconciliation by 83% and providing near real-time visibility</li>
               <li>Automated performance reporting with Power BI and Azure REST APIs, increasing quota attainment by 14%</li>
@@ -268,17 +288,65 @@ improved workforce planning</li>
     <div class="container" id="projects">
       <h1 class="title">Projects</h1>
       <hr />
+      <h2 class="title is-4">Featured AI &amp; Software Projects</h2>
+      <div class="columns is-variable is-5">
+        <div class="column">
+          <article class="card featured-project-card">
+            <div class="card-content">
+              <p class="project-meta">AGENTIC AI · JULY 2026</p>
+              <p class="title is-4">JobTrail</p>
+              <p class="subtitle is-6">Agentic Job-Search Intelligence Platform</p>
+              <div class="content">
+                <p>Local-first workflow platform unifying Gmail application updates, captured job descriptions, AI resume matching, and funnel analytics.</p>
+                <p>Uses schema-validated LLM classification, cached skill extraction, retry handling, deterministic ranking, and 46 offline tests for failure recovery.</p>
+                <div class="tags">
+                  <span class="tag">OpenAI API</span><span class="tag">Node.js</span><span class="tag">SQLite</span><span class="tag">Gmail API</span>
+                </div>
+              </div>
+              <p class="project-link"><strong><a href="https://github.com/jhsutw/JobTrail" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
+            </div>
+          </article>
+        </div>
+        <div class="column">
+          <article class="card featured-project-card">
+            <div class="card-content">
+              <p class="project-meta">LLM APPLICATION · MAY 2026</p>
+              <p class="title is-4">YouTube Music DJ</p>
+              <p class="subtitle is-6">LLM-Powered Recommendation Agent</p>
+              <div class="content">
+                <p>Bilingual AI DJ that converts natural-language moods into controllable, personalized 10-track queues without manual curation.</p>
+                <p>Combines GPT-4o-mini structured outputs with constraint-aware retrieval, ranking, caching, fallback search, and feedback-driven re-curation.</p>
+                <div class="tags">
+                  <span class="tag">OpenAI API</span><span class="tag">YouTube Data API</span><span class="tag">JavaScript</span><span class="tag">Chrome Extension</span>
+                </div>
+              </div>
+              <p class="project-link"><strong><a href="https://github.com/jhsutw/YT-Music-DJ" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
+            </div>
+          </article>
+        </div>
+        <div class="column">
+          <article class="card featured-project-card">
+            <div class="card-content">
+              <p class="project-meta">DATA &amp; CLOUD · DECEMBER 2025</p>
+              <p class="title is-4">SafeTrip</p>
+              <p class="subtitle is-6">Real-Time Travel Risk Analytics Platform</p>
+              <div class="content">
+                <p>Travel-safety platform processing 500K+ NYC Open Data and Airbnb records to generate personalized map recommendations.</p>
+                <p>Uses a BCNF MySQL schema with indexing, query-plan analysis, and API caching to improve data access and recommendation performance.</p>
+                <div class="tags">
+                  <span class="tag">Python</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">AWS</span>
+                </div>
+              </div>
+              <p class="project-link"><strong><a href="https://github.com/jhsutw/Database-and-Computer-System-Project" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <h2 class="title is-4">Other Projects</h2>
       <div class="tile is-ancestor">
         <div class="tile is-vertical is-12">
           <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">StaySafe NYC<br>(Full-Stack)</p>
-                <figure class="image is-3by2">
-                  <img class="modal-trigger" data-target="project-1-modal" src="img/project1_cover.png">
-                </figure>
-              </article>
-            </div>
             <div class="tile is-parent">
               <article class="tile is-child notification">
                 <p class="title">Swiftify<br>(Full-Stack)</p>
@@ -343,11 +411,10 @@ improved workforce planning</li>
                 datetime="2027-5">May 2027</time></p>
           </div>
           <div class="content">
-            Focused on software engineering and computer systems, with hands-on experience in backend development, databases, and cloud-based architectures
+            Focused on artificial intelligence, software engineering, and scalable computer systems, with hands-on work in backend development, databases, and cloud infrastructure.
 
             <ul>
-              <li>Coursework: Software Development (Java), Computer Systems (C), Database & Information Systems (SQL, NoSQL), Data Structures and Software
-Design (Java), Algorithms & Computation, Machine Learning (Python)</li>
+              <li>Coursework: Artificial Intelligence, Machine Learning, Distributed Systems, Algorithms, Data Structures, Computer Systems, and Database Systems</li>
             </ul>
           </div>
         </div>
