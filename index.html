@@ -45,18 +45,17 @@
     @media (max-width: 480px) {
       #projects .tile .image { height: 160px; }
     }
-    .company-mark {
-      width: 48px;
+    .company-logo-wide {
+      width: 64px;
       height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 6px;
-      background: #c62828;
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+    }
+    .company-logo-wide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
   </style>
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
@@ -129,7 +128,9 @@
         <div class="card-content">
           <div class="media">
             <div class="media-left">
-              <div class="company-mark" role="img" aria-label="TSMC">TSMC</div>
+              <figure class="company-logo-wide">
+                <img src="img/tsmc-logo.svg" alt="TSMC logo">
+              </figure>
             </div>
             <div class="media-content">
               <p class="title is-4">TSMC</p>
