@@ -45,6 +45,19 @@
     @media (max-width: 480px) {
       #projects .tile .image { height: 160px; }
     }
+    .company-mark {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: #c62828;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
   </style>
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
 </head>
@@ -113,6 +126,38 @@
       <h1 class="title">Experience</h1>
       <hr />
       <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <div class="company-mark" role="img" aria-label="TSMC">TSMC</div>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">TSMC</p>
+              <p class="subtitle is-6">AI Engineer Intern, Infrastructure and Platform Development - <time datetime="2026-06">June 2026</time> - <time datetime="2026-07">July 2026</time></p>
+            </div>
+          </div>
+          <div class="content">
+            <p>Built agentic AI and observability infrastructure for production troubleshooting workflows across semiconductor fabrication facilities.</p>
+            <ul>
+              <li>Built an end-to-end AI agent root cause analysis system using OpenCode and DeepSeek-V4 across 10 fabs, reducing troubleshooting time from 2-3 hours to under 5 minutes</li>
+              <li>Developed 10 reusable MCP tools on a unified Skill framework, integrating Prometheus, ELK, and Oracle DB telemetry over persistent TCP connections and reducing retrieval latency by 90%</li>
+              <li>Designed a decision pipeline combining 7-day rolling-statistics baselines with LLM reasoning to adjust alert thresholds dynamically, reducing false alarms by 70%</li>
+              <li>Implemented a semantic-search RAG knowledge base that retrieved troubleshooting guides to ground LLM diagnoses</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Agentic AI</span>
+              <span class="tag">MCP</span>
+              <span class="tag">RAG</span>
+              <span class="tag">LLM Systems</span>
+              <span class="tag">Prometheus</span>
+              <span class="tag">ELK</span>
+              <span class="tag">Oracle DB</span>
+              <span class="tag">TCP/IP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-gap">
         <div class="card-content">
           <div class="media">
             <div class="media-left">
