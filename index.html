@@ -2,48 +2,110 @@
 <html lang="en">
 
 <head>
+  <meta charset="utf-8">
   <title>Joseph Hsu | Software &amp; AI Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="img/me-big.png" type="image/png" sizes="32x32">
   <link rel="shortcut icon" href="img/me-big.png" type="image/png">
   <link rel="stylesheet" href="css/main.bundle.css">
   <style>
-    /* Scope smaller project titles to the Projects section only */
-    #projects .tile .title {
-      /* smaller than Bulma default title; use !important to override bundled styles */
-      font-size: 1.5rem !important;
-      line-height: 1.2 !important;
-      margin-bottom: 0.5rem !important;
+    #projects .projects-intro {
+      max-width: 760px;
+      margin-bottom: 2rem;
+      color: #4a5568;
+      font-size: 1.05rem;
+      line-height: 1.65;
     }
-    /* If you prefer slightly larger on very small screens, adjust with media query */
-    @media (max-width: 480px) {
-      #projects .tile .title { font-size: 1rem !important; }
+    #projects .project-group-title {
+      margin: 2.5rem 0 1.25rem;
+      font-size: 1.15rem;
+      color: #4a5568;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-    /* Project cover sizing: enforce uniform thumbnail height and proportional scaling
-       so the photos are never cropped but fill a consistent visual area. */
-    #projects .tile .image {
-      /* set a fixed visual area for the cover */
-      height: 220px;
+    #projects .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    #projects .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid #e5e7eb;
+      border-top: 4px solid #00d1b2;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+      overflow: hidden;
+      transition: transform 160ms ease, box-shadow 160ms ease;
+    }
+    #projects .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+    }
+    #projects .project-card .card-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 1.6rem;
+    }
+    #projects .project-kicker {
       display: flex;
       align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      background: #f5f5f5; /* neutral background for consistent letterboxing */
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+      color: #667085;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    #projects .tile .image img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      object-position: center center;
-      display: block;
+    #projects .project-status {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: #e6fffa;
+      color: #087f6b;
+      font-size: 0.72rem;
+      white-space: nowrap;
     }
-    @media (max-width: 1024px) {
-      #projects .tile .image { height: 200px; }
+    #projects .project-status.is-active {
+      background: #fff7df;
+      color: #8a5a00;
     }
-    @media (max-width: 480px) {
-      #projects .tile .image { height: 160px; }
+    #projects .project-card .title {
+      margin-bottom: 0.4rem !important;
+      font-size: 1.55rem !important;
+      line-height: 1.2;
+    }
+    #projects .project-card .title + .subtitle {
+      margin-top: 0.5rem !important;
+      margin-bottom: 1rem !important;
+      color: #52606d;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+    #projects .project-card .content {
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    #projects .project-evidence {
+      margin: 0 0 1rem 1.1rem;
+    }
+    #projects .project-evidence li + li {
+      margin-top: 0.45rem;
+    }
+    #projects .project-link {
+      margin-top: auto;
+      padding-top: 0.8rem;
+    }
+    #projects .project-link a:focus-visible {
+      outline: 3px solid #ffdd57;
+      outline-offset: 3px;
+    }
+    @media (max-width: 768px) {
+      #projects .project-grid { grid-template-columns: 1fr; }
+      #projects .project-kicker { align-items: flex-start; flex-direction: column; }
     }
     .company-logo-wide {
       width: 64px;
@@ -56,26 +118,6 @@
       width: 100%;
       height: auto;
       object-fit: contain;
-    }
-    .featured-project-card {
-      height: 100%;
-      border-top: 4px solid #00d1b2;
-    }
-    .featured-project-card .card-content {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .featured-project-card .project-meta {
-      color: #6b7280;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.75rem;
-    }
-    .featured-project-card .project-link {
-      margin-top: auto;
-      padding-top: 0.75rem;
     }
   </style>
   <script src="https://kit.fontawesome.com/4e5a72c756.js"></script>
@@ -288,113 +330,120 @@ improved workforce planning</li>
     <div class="container" id="projects">
       <h1 class="title">Projects</h1>
       <hr />
-      <h2 class="title is-4">Featured AI &amp; Software Projects</h2>
-      <div class="columns is-variable is-5">
-        <div class="column">
-          <article class="card featured-project-card">
-            <div class="card-content">
-              <p class="project-meta">AGENTIC AI · JULY 2026</p>
-              <p class="title is-4">JobTrail</p>
-              <p class="subtitle is-6">Agentic Job-Search Intelligence Platform</p>
-              <div class="content">
-                <p>Local-first workflow platform unifying Gmail application updates, captured job descriptions, AI resume matching, and funnel analytics.</p>
-                <p>Uses schema-validated LLM classification, cached skill extraction, retry handling, deterministic ranking, and 46 offline tests for failure recovery.</p>
-                <div class="tags">
-                  <span class="tag">OpenAI API</span><span class="tag">Node.js</span><span class="tag">SQLite</span><span class="tag">Gmail API</span>
-                </div>
+      <p class="projects-intro">Selected systems work across applied AI, distributed infrastructure, and full-stack data products. Each project is presented around the engineering decisions that make it reliable: state ownership, explicit fallbacks, privacy boundaries, failure recovery, and measurable validation.</p>
+
+      <h2 class="project-group-title">AI systems &amp; product engineering</h2>
+      <div class="project-grid">
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Agentic AI · 2026</span><span class="project-status">69 tests passing</span></div>
+            <h3 class="title is-4">JobTrail</h3>
+            <p class="subtitle is-6">Privacy-aware job-search workflow system</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Separates a local Gmail worker from the hosted dashboard so OAuth tokens and email bodies stay on-device while only classified metadata reaches Neon.</li>
+                <li>Combines defensive LLM parsing, manual-review fallbacks, lease-based job recovery, idempotent resolution, and a forward-only application state machine.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">OpenAI API</span><span class="tag">Gmail API</span><span class="tag">Chrome MV3</span>
               </div>
-              <p class="project-link"><strong><a href="https://github.com/jhsutw/JobTrail" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
             </div>
-          </article>
-        </div>
-        <div class="column">
-          <article class="card featured-project-card">
-            <div class="card-content">
-              <p class="project-meta">LLM APPLICATION · MAY 2026</p>
-              <p class="title is-4">YouTube Music DJ</p>
-              <p class="subtitle is-6">LLM-Powered Recommendation Agent</p>
-              <div class="content">
-                <p>Bilingual AI DJ that converts natural-language moods into controllable, personalized 10-track queues without manual curation.</p>
-                <p>Combines GPT-4o-mini structured outputs with constraint-aware retrieval, ranking, caching, fallback search, and feedback-driven re-curation.</p>
-                <div class="tags">
-                  <span class="tag">OpenAI API</span><span class="tag">YouTube Data API</span><span class="tag">JavaScript</span><span class="tag">Chrome Extension</span>
-                </div>
+            <p class="project-link"><strong><a href="https://github.com/jhsutw/JobTrail" target="_blank" rel="noopener">Explore the repository →</a></strong></p>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Creative AI · 2026</span><span class="project-status is-active">Active development</span></div>
+            <h3 class="title is-4">Morsy Studio</h3>
+            <p class="subtitle is-6">Stateful 3D previsualization workflow</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Uses one validated scene model for Three.js editing, bilingual commands, storyboard playback, durable project state, and deterministic HyperFrames export.</li>
+                <li>Rejects stale AI proposals through revision checks and records truthful provider job states, with explicit local privacy and network boundaries.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Three.js</span><span class="tag">JavaScript</span><span class="tag">Vite</span><span class="tag">AI Agents</span><span class="tag">HyperFrames</span>
               </div>
-              <p class="project-link"><strong><a href="https://github.com/jhsutw/YT-Music-DJ" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
             </div>
-          </article>
-        </div>
-        <div class="column">
-          <article class="card featured-project-card">
-            <div class="card-content">
-              <p class="project-meta">DATA &amp; CLOUD · DECEMBER 2025</p>
-              <p class="title is-4">SafeTrip</p>
-              <p class="subtitle is-6">Real-Time Travel Risk Analytics Platform</p>
-              <div class="content">
-                <p>Travel-safety platform processing 500K+ NYC Open Data and Airbnb records to generate personalized map recommendations.</p>
-                <p>Uses a BCNF MySQL schema with indexing, query-plan analysis, and API caching to improve data access and recommendation performance.</p>
-                <div class="tags">
-                  <span class="tag">Python</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">AWS</span>
-                </div>
+            <p class="project-link"><strong><a href="https://github.com/jhsutw/morsy" target="_blank" rel="noopener">Explore the repository →</a></strong></p>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Computer Vision · 2026</span><span class="project-status">17 tests passing</span></div>
+            <h3 class="title is-4">AI Camera Director</h3>
+            <p class="subtitle is-6">Human-in-the-loop preference learning</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Connects controlled image-pair generation to a regularized Bradley–Terry ranker across composition and CIELAB color features.</li>
+                <li>Supports cold-start fallbacks, deterministic A/B randomization, blinded baseline comparison, profile isolation, and robust image validation.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">Computer Vision</span><span class="tag">Preference Learning</span><span class="tag">OpenCV</span><span class="tag">Streamlit</span>
               </div>
-              <p class="project-link"><strong><a href="https://github.com/jhsutw/Database-and-Computer-System-Project" target="_blank" rel="noopener">View GitHub Repository</a></strong></p>
             </div>
-          </article>
-        </div>
+            <p class="project-link"><strong>Private academic team repository</strong></p>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Recommendation Systems · 2026</span><span class="project-status">Chrome MV3</span></div>
+            <h3 class="title is-4">YouTube Music DJ</h3>
+            <p class="subtitle is-6">Resilient bilingual recommendation agent</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Persists queue state across popup closure and service-worker termination while coordinating playback through a YouTube SPA content script.</li>
+                <li>Pairs structured LLM parsing with hard-constraint restoration, quota-aware fallback retrieval, language/diversity guards, bounded caching, and feedback re-ranking.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">JavaScript</span><span class="tag">OpenAI API</span><span class="tag">YouTube Data API</span><span class="tag">Ranking</span><span class="tag">Chrome Extension</span>
+              </div>
+            </div>
+            <p class="project-link"><strong><a href="https://github.com/jhsutw/YT-Music-DJ" target="_blank" rel="noopener">Explore the repository →</a></strong></p>
+          </div>
+        </article>
       </div>
 
-      <h2 class="title is-4">Other Projects</h2>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Swiftify<br>(Full-Stack)</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-2-modal" src="img/project2_cover.png">
-                </figure>
-              </article>
+      <h2 class="project-group-title">Systems &amp; data platforms</h2>
+      <div class="project-grid">
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Distributed Systems · 2026</span><span class="project-status">C++17</span></div>
+            <h3 class="title is-4">PennCloud</h3>
+            <p class="subtitle is-6">Fault-tolerant distributed cloud platform</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Builds mail, drive, admin, and HTTP services over a partitioned key-value layer with coordinator routing, pooled TCP connections, and KV-backed sessions.</li>
+                <li>Implements epoch-aware replication, LSN-ordered commits, failover and recovery paths; 231 HTTP and 14 load-balancer cases pass in the reviewed suites.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">C++17</span><span class="tag">Pthreads</span><span class="tag">TCP/IP</span><span class="tag">Replication</span><span class="tag">Distributed Systems</span>
+              </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">AWS Architecture<br>(infrastructure)</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-3-modal" src="img/project3_cover.png">
-                </figure>
-              </article>
-            </div>
+            <p class="project-link"><strong>Private academic team repository</strong></p>
           </div>
-        </div>
-      </div>
-      <div class="tile is-ancestor">
-        <div class="tile is-vertical is-12">
-          <div class="tile">
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Knowledge Graph<br>(NLP/ML)</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-4-modal" src="img/project4_cover.png">
-                </figure>
-              </article>
+        </article>
+
+        <article class="card project-card">
+          <div class="card-content">
+            <div class="project-kicker"><span>Data Platform · 2025</span><span class="project-status">500K+ rows</span></div>
+            <h3 class="title is-4">SafeTrip</h3>
+            <p class="subtitle is-6">NYC safety and lodging analytics</p>
+            <div class="content">
+              <ul class="project-evidence">
+                <li>Normalizes 12 monthly Airbnb extracts and NYPD complaints into 500K+ validated relational rows, including 416K geocoded crime incidents.</li>
+                <li>Exposes explainable safety, value, and neighborhood comparisons through CTE-based MySQL analytics, deterministic API caching, React, and Google Maps.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">React</span><span class="tag">Express</span><span class="tag">MySQL</span><span class="tag">Python</span><span class="tag">Google Maps</span>
+              </div>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Citibike System<br>(ML/DS)</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-5-modal" src="img/project5_cover.png">
-                </figure>
-              </article>
-            </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification">
-                <p class="title">Tourist Assistant<br>(Full-Stack)</p>
-                <figure class="image is-4by3">
-                  <img class="modal-trigger" data-target="project-6-modal" src="img/project6_cover.png">
-                </figure>
-              </article>
-            </div>
+            <p class="project-link"><strong><a href="https://github.com/jhsutw/Database-and-Computer-System-Project" target="_blank" rel="noopener">Explore the repository →</a></strong></p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
